@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Md Badhon | Industrial Automation Engineer</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/HsWNdYGN/Asset-2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2bd4c7;
+            --primary-dark: #22b3a8;
+            --bg-light: #f8fafc;
+            --bg-dark: #020617;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .bg-grid {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(43, 212, 199, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(43, 212, 199, 0.05) 1px, transparent 1px);
+        }
+        .dark .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(43, 212, 199, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(43, 212, 199, 0.02) 1px, transparent 1px);
+        }
+        @media (min-width: 768px) {
+            .bg-grid { background-size: 80px 80px; }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(43, 212, 199, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .glow-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .glow-button:active { transform: scale(0.95); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tech-underline {
+            position: relative;
+        }
+        .tech-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background: var(--primary);
+        }
+        @media (min-width: 768px) {
+            .tech-underline::after { width: 40px; height: 3px; bottom: -8px; }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        @keyframes drift {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 20px); }
+            100% { transform: translate(0, 0); }
+        }
+        .animate-drift { animation: drift 15s ease-in-out infinite; }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+        .animate-pulse-slow { animation: pulse-slow 8s ease-in-out infinite; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeIn { animation: fadeIn 0.4s ease-out forwards; }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #2bd4c7 0%, #17a69b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #2bd4c7 0%, #17a69b 100%);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2bd4c7',
+                        secondary: '#17a69b',
+                        dark: '#020617',
+                        slate: { 950: '#020617', 900: '#0f172a', 800: '#1e293b' }
+                    }
+                }
+            }
+        }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+<body class="bg-grid bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <div id="root"></div>
+</body>
+</html>
